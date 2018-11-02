@@ -15,13 +15,26 @@ toggleTodo = (todo) => {
   this.props.updateTodo(todo);
 }
 
+deleteTodo = (todo) => {
+  this.props.deleteTodo(todo);
+}
+
   render() {
-    const { todos } = this.props;
+    const { todos, nowShowing } = this.props;
 
     return (
       <ul className="todo-list">
         {
-          todos.map((todo) => {
+          todos.filter((todo) => {
+            if (nowShowing === 'active') {
+              return todo.isFinished === false;
+            }
+
+            if (nowShowing === 'completed') {
+              return todo.isFinished === true;
+            }
+            return true;
+          }).map((todo) => {
             return (
               <li 
                 key = {todo.title}
@@ -32,6 +45,11 @@ toggleTodo = (todo) => {
                 onChange={() => { this.toggleTodo(todo)}}
                 />
                 {todo.title}
+                <button 
+                onClick={() => { this.deleteTodo(todo)}}
+                >
+                Del
+                </button>
               </li>
             );
           })
