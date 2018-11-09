@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, ButtonGroup, Icon } from '@QCFE/lego-ui';
 
 class Filter extends Component {
   changeShowing = (e) => {
@@ -11,29 +12,55 @@ class Filter extends Component {
     const { nowShowing } = this.props;
 
     return (
-      <ul className="todo-filter">
-        <li
-          className={nowShowing === 'all' ? 'current' : ''}
-          onClick={this.changeShowing}
-          data-now-showing="all"
+      <ButtonGroup className="btngroup">
+      <Button 
+        type="default"
+        disabled={nowShowing === 'all'}
+        onClick={this.changeShowing}
+        data-now-showing="all"
         >
-          all
-        </li>
-        <li
-          className={nowShowing === 'active' ? 'current' : ''}
-          onClick={this.changeShowing}
-          data-now-showing="active"
+        All
+      </Button>
+      <Button 
+        type="default"
+        disabled={nowShowing === 'active'}
+        onClick={this.changeShowing}
+        data-now-showing="active"
         >
-          active
-        </li>
-        <li
-          className={nowShowing === 'completed' ? 'current' : ''}
-          onClick={this.changeShowing}
-          data-now-showing="completed"
+        Active
+      </Button>
+      <Button 
+        type="default"
+        disabled={nowShowing === 'complete'}
+        onClick={this.changeShowing}
+        data-now-showing="completed"
         >
-          completed
-        </li>
-      </ul>
+        Completed
+      </Button>
+    </ButtonGroup>
+      // <ul className="todo-filter">
+      //   <li
+      //     className={nowShowing === 'all' ? 'current' : ''}
+      //     onClick={this.changeShowing}
+      //     data-now-showing="all"
+      //   >
+      //     all
+      //   </li>
+      //   <li
+      //     className={nowShowing === 'active' ? 'current' : ''}
+      //     onClick={this.changeShowing}
+      //     data-now-showing="active"
+      //   >
+      //     active
+      //   </li>
+      //   <li
+      //     className={nowShowing === 'completed' ? 'current' : ''}
+      //     onClick={this.changeShowing}
+      //     data-now-showing="completed"
+      //   >
+      //     completed
+      //   </li>
+      // </ul>
     );
   }
 }

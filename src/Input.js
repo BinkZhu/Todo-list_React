@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Input } from '@QCFE/lego-ui';
 
-class Input extends Component {
+class TodoInput extends Component {
 
  constructor(props) {
    super(props);
@@ -46,7 +47,7 @@ class Input extends Component {
  render() {
    const { value } = this.state;
    return (
-     <input
+     <Input
        type="text"
        className="todo-input"
        value={value}
@@ -57,4 +58,4 @@ class Input extends Component {
  }
 }
 
-export default Input;
+export default TodoInput;

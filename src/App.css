@@ -1,24 +1,19 @@
-body {
-  padding-top: 200px;
-}
-
 li {
   list-style-type: none;
 }
 
 .todo {
-  width: 500pt;
+  width: 500px;
   margin: auto;
+  
   padding-top: 0px;
   padding-left: 10px;
   padding-right: 10px;
-
-  border: 1px dashed 
 }
 
 .todo-input {
   padding-top: 10px;
-  margin: auto;
+  margin-top: 80px;
   display: block;
   width: 312px;
   height: 40px;
@@ -37,18 +32,28 @@ li {
 .todo-item {
   padding: 4px;
   margin-bottom: 4px;
-  border: 1px solid coral;
+  /* border: 1px solid coral; */
 }
 
 .todo-filter li {
   display: inline-block;
+  margin-top: 80px;
   padding-left: 10px;
   padding-right: 10px;
-  border: 1px solid coral;
+  /* border: 1px solid coral; */
   cursor: pointer;
 }
 
 .todo-filter li.current {
   opacity: 0.3;
   cursor: not-allowed;
+}
+
+.btn {
+  float: right;
+}
+
+.btngroup{
+  margin-top: 24px;
+  
 }

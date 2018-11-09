@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import '@QCFE/lego-ui/lib/scss/lego-ui.min.css';
+
 
 import Input from './Input';
 import Filter from './Filter';
